@@ -1,2 +1,2 @@
 # NeuralNetwork
-2  layers Neural Network 
+2  layers Neural Network made from scartch that predict an XOR 
