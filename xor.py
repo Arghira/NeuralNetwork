@@ -37,10 +37,6 @@ def train(x, t, V, W, bv, bw):
     dV = np.outer(x, Ev)
 
     loss = -np.mean(t * np.log(Y) + (1 - t) * np.log(1 - Y))
-
-    # Note that we use error for each layer as a gradient
-    # for biases
-
     return loss, (dV, dW, Ev, Ew)
 
 
@@ -50,8 +46,6 @@ def predict(x, V, W, bv, bw):
     return (sigmoid(B) > 0.5).astype(int)
 
 # Setup initial parameters
-# Note that initialization is cruxial for first-order methods!
-
 
 V = np.random.normal(scale=0.1, size=(n_in, n_hidden))
 W = np.random.normal(scale=0.1, size=(n_hidden, n_out))
